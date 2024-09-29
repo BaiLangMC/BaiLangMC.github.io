@@ -1,0 +1,52 @@
+<html><body><p>
+BaseHTTPRequestHandler(socketserver.StreamRequestHandler)
+<br />     |  - client_address is the client IP address in the form (host, port);
+<br />     |  - command, path and version are the broken-down request line;
+<br />     |  - headers is an instance of email.message.Message (or a derived class) containing the header information;
+<br />     |  - rfile is a file object open for reading positioned at the start of the optional input data part;
+<br />     |  - wfile is a file object open for writing.
+
+
+<br />     |  The first thing to be written must be the response line.  Then
+<br />     |  follow 0 or more header lines, then a blank line, and then the
+<br />     |  actual data (if any).  The meaning of the header lines depends on
+<br />     |  the command executed by the server; in most cases, when data is
+<br />     |  returned, there should be at least one header line of the form
+<br />     |
+<br />     |  Content-type: <type>/<subtype>
+<br />     |
+<br />     |  where <type> and <subtype> should be registered MIME types,
+<br />     |  e.g. "text/html" or "text/plain".
+<br />     |
+
+
+
+<br />     |  send_error(self, code, message=None, explain=None)
+<br />     |      Send and log an error reply.
+<br />     |
+<br />     |      Arguments are
+<br />     |      * code:    an HTTP error code
+<br />     |                 3 digits
+<br />     |      * message: a simple optional 1 line reason phrase.
+<br />     |                 *( HTAB / SP / VCHAR / %x80-FF )
+<br />     |                 defaults to short entry matching the response code
+<br />     |      * explain: a detailed message defaults to the long entry
+<br />     |                 matching the response code.
+<br />     |
+<br />     |      This sends an error response (so it must be called before any
+<br />     |      output has been generated), logs the error, and finally sends
+<br />     |      a piece of HTML explaining the error to the user.
+<br />     |
+<br />     |  send_header(self, keyword, value)
+<br />     |      Send a MIME header to the headers buffer.
+<br />     |
+<br />     |  send_response(self, code, message=None)
+<br />     |      Add the response header to the headers buffer and log the
+<br />     |      response code.
+<br />     |
+<br />     |      Also send two standard headers with the server software
+<br />     |      version and the current date.
+
+
+
+</p></body></html>
